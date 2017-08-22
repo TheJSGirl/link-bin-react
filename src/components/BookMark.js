@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import propTypes from 'prop-types';
+import Linkify from 'react-linkify';
+
 
 class BookMark extends Component{
     
@@ -9,10 +11,12 @@ class BookMark extends Component{
         // const {bookmark} = this.props;
         const {name, link} = this.props.bookmark;
         return(
+            
             <li>
                 <strong>Name: {name} </strong>
-                <p>Link:{link} </p>
+                <Linkify><p>Link:{link}</p></Linkify> 
             </li>
+            
         )
     }
 }

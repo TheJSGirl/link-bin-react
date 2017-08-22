@@ -10,21 +10,23 @@ class App extends Component {
 
     this.state = {
       bookMarks: [
-        {link: 'www.goggle.com', name: 'goggle'},
+        {link: 'www.google.com', name: 'google'},
         {link: 'www.Quora.com', name: 'Quora'},
-        {link: 'www.facebook.com', name: 'facebook'}
+        {link: 'www.facebook.com', name: 'facebook'},
+        {link: 'github.com/thejsgirl', name: 'thejsgirl'}
         ] 
     }
   }
+
+  _addBookMark(bookmark){
+    this.setState({bookMarks: [bookmark, ...this.state.bookMarks]});
+  }
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div>
           <h2>Welcome to React</h2><br/>
-          <BookMarkForm />
+          <BookMarkForm addBookMark= {this._addBookMark.bind(this)}/>
           <BookMarkList bookmarks = {this.state.bookMarks} />
-        </div>
        
       </div>
     );
