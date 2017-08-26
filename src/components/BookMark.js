@@ -11,13 +11,18 @@ class BookMark extends Component{
         // const {bookmark} = this.props;
         const {name, link} = this.props.bookmark;
         return(
-            
-            <li>
-                <strong>Name: {name} </strong>
-                <Linkify><p>Link:{link}</p></Linkify> 
-            </li>
-            
-        )
+            <div className="col s12 m3 l2 card teal lighten-2" style={{marginRight: '1%'}} >
+                <div className="card-image">
+                <span className="card-title"></span>
+                </div>
+                <div className="card-content">
+                <p>{name}</p>
+                </div>
+                <div className="card-action">
+                <p className="b-link"><Linkify>{link}</Linkify></p>
+                </div>
+            </div>
+        );
     }
 }
 
