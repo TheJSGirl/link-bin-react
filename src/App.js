@@ -23,10 +23,17 @@ class App extends Component {
   render() {
     return (
       <div>
-          <h2>Welcome to React</h2><br/>
-          <BookMarkForm addBookMark= {this._addBookMark.bind(this)}/>
-          <BookMarkList bookmarks = {this.state.bookMarks} />
-       
+        <nav class=" teal lighten-2">
+          <div>
+            <a href="#" class="brand-logo center">List Bin</a>
+          </div>
+        </nav><br/>
+        <div class="container">
+          <div className="row">
+            <BookMarkForm addBookMark= {this._addBookMark.bind(this)}/>          
+          </div>
+            <BookMarkList bookmarks = {this.state.bookMarks} />        
+        </div>
       </div>
     );
   }
