@@ -23,12 +23,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav class=" teal lighten-2">
+        <nav className="teal lighten-2">
           <div>
-            <a href="#" class="brand-logo center">List Bin</a>
+            <a href={''} className="brand-logo center">List Bin</a>
           </div>
         </nav><br/>
-        <div class="container">
+        <div className="container">
           <div className="row">
             <BookMarkForm addBookMark= {this._addBookMark.bind(this)}/>          
           </div>

@@ -22,7 +22,7 @@ class BookMarkForm extends Component{
             <form onSubmit= {this._handleSubmit.bind(this)} >
                 <div className="row">
                 <input ref= "name" type="text"  placeholder="Enter a name" className="col l4 offset-l1 m8 offset-m2 s10 offset-s1 "/>
-                <input ref= "name" type="text" placeholder="Enter a link" className="col l4 offset-l2 m8 offset-m2 s10 offset-s1"/>
+                <input ref= "link" type="text" placeholder="Enter a link" className="col l4 offset-l2 m8 offset-m2 s10 offset-s1"/>
                 </div>
                 <div className="row">
                 <button className="btn waves-effect waves-light col l6 offset-l3 m8 offset-m2 s10 offset-s1">Add</button>  
