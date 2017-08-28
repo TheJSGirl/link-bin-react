@@ -9,11 +9,11 @@ class BookMarkList extends Component{
         const {bookmarks} = this.props;
         let i = 0;
         return(
-            <ul>
+            <div className="row">
                 {
                     bookmarks.map((bookmark) => <BookMark key={i++} bookmark={bookmark}/>)
                 }
-            </ul>
+            </div>
         )
     }
 }
