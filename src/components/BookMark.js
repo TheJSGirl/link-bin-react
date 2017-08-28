@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 
 
 class BookMark extends Component{
-    
+   
     render(){
         console.log(this.props);
         const {name, link} = this.props.bookmark;
@@ -17,7 +17,7 @@ class BookMark extends Component{
                 <p>{name}</p>
                 </div>
                 <div className="card-action">
-                <a href={link} target="_blank" className="b-link">Visit Link</a>
+                <a href={'http://' + link} target="_blank" className="b-link">Visit Link</a>
                 </div>
             </div>
         );
