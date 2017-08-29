@@ -7,10 +7,16 @@ class BookMarkForm extends Component{
         const {addBookMark} = this.props;
         const name = this.refs.name.value;
         const link = this.refs.link.value;
+
+        if(name === '' || link === ''){
+            return;
+        }
+
         const bookmark = {
             name,
             link
         }
+        // this.props.addBookMark(bookmark); // for readibility we use es6 destructuring 
         addBookMark(bookmark);
         console.log(bookmark);
         this.refs.name.value = '';

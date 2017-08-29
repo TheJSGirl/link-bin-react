@@ -6,7 +6,7 @@ import propTypes from 'prop-types';
 class BookMark extends Component{
    
     render(){
-        console.log(this.props);
+
         const {name, link} = this.props.bookmark;
         return(
             <div className="col s12 m3 l2 card teal lighten-2" style={{marginRight: '1%'}} >
@@ -17,7 +17,7 @@ class BookMark extends Component{
                 <p>{name}</p>
                 </div>
                 <div className="card-action">
-                <a href={'http://' + link} target="_blank" className="b-link">Visit Link</a>
+                <a href={link} target="_blank" className="b-link">Visit Link</a>
                 </div>
             </div>
         );
