@@ -5,7 +5,7 @@ import BookMarkList from './components/BookMarkList';
 import axios from 'axios';
 
 
-const BASE_URL = 'http://localhost:5000/api/v1';
+const BASE_URL = 'https://list-bin.herokuapp.com/api/v1';
 
 class App extends Component {
 
@@ -79,7 +79,7 @@ class App extends Component {
       <div>
         <nav className="teal lighten-2">
           <div>
-            <a href={''} className="brand-logo center">List Bin</a>
+            <a href={''} className="brand-logo center">Link Bin</a>
           </div>
         </nav><br/>
         <div className="container">
