@@ -3,9 +3,10 @@ import './App.css';
 import BookMarkForm from './components/BookMarkForm';
 import BookMarkList from './components/BookMarkList';
 import axios from 'axios';
+import Preloader from './components/Preloader';
 
 
-const BASE_URL = 'https://list-bin.herokuapp.com/api/v1';
+const BASE_URL = 'https://link-bin.herokuapp.com/api/v1';
 
 class App extends Component {
 
@@ -13,7 +14,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      bookMarks: [] 
+      bookMarks: [],
+      isLoading: true
     }
   }
 
@@ -33,7 +35,10 @@ class App extends Component {
     .then(response => {
       console.log(response);
       console.log(response.data);
-      this.setState({bookMarks: response.data.data});
+      this.setState({
+        bookMarks: response.data.data,
+        isLoading: false
+      });
     })
     .catch(err => {
       alert(err);
@@ -66,7 +71,9 @@ class App extends Component {
     .then(response => {
       console.log(response);
       console.log(response.data);
-      return this.setState({bookMarks: [bookmark, ...this.state.bookMarks]});      
+      return this.setState({
+        bookMarks: [bookmark, ...this.state.bookMarks]
+      });      
     })
     .catch(err => {
       alert(err);
@@ -75,6 +82,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div>
         <nav className="teal lighten-2">
@@ -84,9 +92,12 @@ class App extends Component {
         </nav><br/>
         <div className="container">
           <div className="row">
-            <BookMarkForm addBookMark= {this._addBookMark.bind(this)}/>          
+            <BookMarkForm addBookMark= {this._addBookMark.bind(this)}/>
           </div>
-            <BookMarkList bookmarks = {this.state.bookMarks} />        
+          {
+            (this.state.isLoading) ? <Preloader/> :
+            <BookMarkList bookmarks = {this.state.bookMarks} />
+          }
         </div>
       </div>
     );
